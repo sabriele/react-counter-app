@@ -13,12 +13,14 @@ export default class Counter extends Component {
     const { value, id, handleCount, handleDelete } = this.props;
 
     return (
-      <React.Fragment>
-        <div className={this.evaluatePositiveOrNegative()}>{value}</div>
+      <div>
+        <span>Child no.{id}:</span>
+        <span className={this.evaluatePositiveOrNegative()}>{value}</span>
         <button onClick={() => handleCount(id, 1)}>+</button>
         <button onClick={() => handleCount(id, -1)}>-</button>
-        <button onClick={() => handleDelete(id)}>Delete</button>
-      </React.Fragment>
+        <span>Married?</span>
+        <button onClick={() => handleDelete(id)}>Yes</button>
+      </div>
     );
   }
 }

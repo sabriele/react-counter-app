@@ -35,6 +35,9 @@ export default class Counters extends Component {
     return (
       <React.Fragment>
         <button onClick={this.handleReset}>Reset</button>
+        {counters.length === 0 && (
+          <p>Why's no one receiving angpaos this year??</p>
+        )}
         {counters.map(counter => {
           return (
             <Counter

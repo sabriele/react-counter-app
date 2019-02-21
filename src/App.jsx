@@ -5,7 +5,7 @@ export class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Counter Lab</h1>
+        <h1 className="center">Angpao Counter Machine</h1>
         <Counters />
       </React.Fragment>
     );
