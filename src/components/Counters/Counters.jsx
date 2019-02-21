@@ -18,6 +18,12 @@ export default class Counters extends Component {
     this.setState({ counters: result });
   };
 
+  handleDelete = counterId => {
+    const { counters } = this.state;
+    const filteredData = counters.filter(counter => counter.id !== counterId);
+    this.setState({ counters: filteredData });
+  };
+
   render() {
     const { counters } = this.state;
     return (
@@ -29,6 +35,7 @@ export default class Counters extends Component {
               id={counter.id}
               value={counter.value}
               handleCount={this.handleCount}
+              handleDelete={this.handleDelete}
             />
           );
         })}
