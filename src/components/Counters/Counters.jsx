@@ -24,10 +24,17 @@ export default class Counters extends Component {
     this.setState({ counters: filteredData });
   };
 
+  handleReset = () => {
+    const resetCounters = [...counters];
+    resetCounters.map(counter => (counter.value = 0));
+    this.setState({ counters: resetCounters });
+  };
+
   render() {
     const { counters } = this.state;
     return (
       <React.Fragment>
+        <button onClick={this.handleReset}>Reset</button>
         {counters.map(counter => {
           return (
             <Counter
